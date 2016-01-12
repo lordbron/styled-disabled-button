@@ -10,7 +10,8 @@
     {
         "owner": {
             "properties": {
-                "element": {"#": "main"}
+                "element": {"#": "main"},
+                "readOnly": true
             }
         },
         "buttonNoHTMLClassDisabled": {
@@ -27,6 +28,22 @@
                     "<-": "(@owner.readOnly)?\"btn-primary-disabled\":\"btn-primary\""
                 },
                 "enabled": {"<-": "!@owner.readOnly"}
+            }
+        },
+        "buttonNoHTMLClassDisabledJSStyled": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "buttonNoHTMLClassDisabledJSStyled"},
+                "formenctype": "application/x-www-form-urlencoded",
+                "formmethod": "get",
+                "label": "buttonNoHTMLClassEnabled",
+                "type": "button"
+            },
+            "bindings": {
+                "element.className": {
+                    "<-": "(@owner.readOnly)?\"btn-primary-disabled\":\"btn-primary\""
+                },
+                "enabled": {"<-": "@owner.readOnly"}
             }
         },
         "buttonNoHTMLClassEnabled": {
@@ -68,6 +85,7 @@
         <button data-montage-id="buttonWithHTMLClass" class="btn-primary"></button>
         <button data-montage-id="buttonNoHTMLClassEnabled"></button>
         <button data-montage-id="buttonNoHTMLClassDisabled"></button>
+        <button data-montage-id="buttonNoHTMLClassDisabledJSStyled"></button>
     </div>
 </body>
 </html>
