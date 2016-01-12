@@ -8,9 +8,9 @@ var Component = require("montage/ui/component").Component;
  * @extends Component
  */
 exports.Main = Component.specialize(/** @lends Main# */ {
-    constructor: {
-        value: function Main() {
-            this.super();
+    enterDocument: {
+        value: function (firstTime) {
+            this.templateObjects.buttonNoHTMLClassDisabledJSStyled.element.className = "btn-primary-disabled";
         }
     }
 });
