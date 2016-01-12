@@ -16,6 +16,7 @@
                 "draggable": "true",
                 "formenctype": "application/x-www-form-urlencoded",
                 "formmethod": "get",
+                "readOnly": true,
                 "type": "button"
             }
         },
@@ -27,6 +28,12 @@
                 "formmethod": "get",
                 "label": "Button",
                 "type": "button"
+            },
+            "bindings": {
+                "element.className": {
+                    "<-": "(@owner.readOnly)?\"btn-primary-disabled\":\"btn-primary\""
+                },
+                "enabled": {"<-": "!@owner.readOnly"}
             }
         },
         "buttonNoHTMLClassEnabled": {
@@ -37,16 +44,30 @@
                 "formmethod": "get",
                 "label": "Button",
                 "type": "button"
+            },
+            "bindings": {
+                "element.className": {
+                    "<-": "(@owner.readOnly)?\"btn-primary-disabled\":\"btn-primary\""
+                },
+                "enabled": {"<-": "@owner.readOnly"}
             }
         },
         "buttonWithHTMLClass": {
             "prototype": "montage/ui/button.reel",
             "properties": {
                 "element": {"#": "buttonWithHTMLClass"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true",
                 "formenctype": "application/x-www-form-urlencoded",
                 "formmethod": "get",
                 "label": "Button",
                 "type": "button"
+            },
+            "bindings": {
+                "element.className": {
+                    "<-": "(@owner.readOnly)?\"btn-primary-disabled\":\"btn-primary\""
+                }
             }
         }
     }
