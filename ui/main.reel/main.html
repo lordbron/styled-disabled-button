@@ -2,21 +2,55 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Main</title>
-
+    <title>
+        Main
+    </title>
     <link rel="stylesheet" href="main.css">
-
     <script type="text/montage-serialization">
-        {
-            "owner": {
-                "properties": {
-                    "element": {"#": "main"}
-                }
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "main"}
+            }
+        },
+        "buttonNoHTMLClassDisabled": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "buttonNoHTMLClassDisabled"},
+                "formenctype": "application/x-www-form-urlencoded",
+                "formmethod": "get",
+                "label": "Button",
+                "type": "button"
+            }
+        },
+        "buttonNoHTMLClassEnabled": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "buttonNoHTMLClassEnabled"},
+                "formenctype": "application/x-www-form-urlencoded",
+                "formmethod": "get",
+                "label": "Button",
+                "type": "button"
+            }
+        },
+        "buttonWithHTMLClass": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "buttonWithHTMLClass"},
+                "formenctype": "application/x-www-form-urlencoded",
+                "formmethod": "get",
+                "label": "Button",
+                "type": "button"
             }
         }
+    }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main"></div>
+    <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <button data-montage-id="buttonWithHTMLClass"></button>
+        <button data-montage-id="buttonNoHTMLClassEnabled"></button>
+        <button data-montage-id="buttonNoHTMLClassDisabled"></button>
+    </div>
 </body>
 </html>
